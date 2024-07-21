@@ -35,11 +35,11 @@ Note: debug builds are only available in Github Actions.
 
 ## For Developers
 
-Developers are welcome to write Xposed modules with hooks based on LSPosed Framework. A module based on LSPosed framework is fully compatible with the original Xposed Framework, and vice versa, a Xposed Framework-based module will work well with LSPosed framework too.
+Developers are welcome to write Xposed modules with hooks based on LFPosed Framework. A module based on LFPosed framework is fully compatible with the original Xposed Framework, and vice versa, a Xposed Framework-based module will work well with LFPosed framework too.
 
 - [Xposed Framework API](https://api.xposed.info/)
 
-We use our own module repository. We welcome developers to submit modules to our repository, and then modules can be downloaded in LSPosed.
+We use our own module repository. We welcome developers to submit modules to our repository, and then modules can be downloaded in LFPosed.
 
 - [LSPosed Module Repository](https://github.com/Xposed-Modules-Repo)
 
