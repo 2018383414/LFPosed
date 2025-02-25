@@ -83,6 +83,11 @@ jobs:
           cd ../service
           ./gradlew publishToMavenLocal
 
+      - name: Install Ninja
+        run: |
+          sudo apt update
+          sudo apt install -y ninja-build
+
       - name: Build with Gradle
         run: |
           ./gradlew zipAll
