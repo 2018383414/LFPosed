@@ -101,31 +101,31 @@ jobs:
           unzip magisk-loader/release/LFPosed-v*-zygisk-debug.zip -d LFPosed-zygisk-debug
 
       - name: Upload riru release
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.prepareArtifact.outputs.riruReleaseName }}
           path: "./LFPosed-riru-release/*"
 
       - name: Upload riru debug
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.prepareArtifact.outputs.riruDebugName }}
           path: "./LFPosed-riru-debug/*"
 
       - name: Upload zygisk release
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.prepareArtifact.outputs.zygiskReleaseName }}
           path: "./LFPosed-zygisk-release/*"
 
       - name: Upload zygisk debug
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.prepareArtifact.outputs.zygiskDebugName }}
           path: "./LFPosed-zygisk-debug/*"
 
       - name: Upload mappings
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: mappings
           path: |
@@ -133,7 +133,7 @@ jobs:
             app/build/outputs/mapping
 
       - name: Upload symbols
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: symbols
           path: build/symbols
