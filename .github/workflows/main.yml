@@ -74,7 +74,7 @@ jobs:
       - name: Setup Ninja
         uses: seanmiddleditch/gha-setup-ninja@master
         with:
-          version: 1.12.1
+          version: 1.11.1
 
       - name: Build dependencies
         working-directory: libxposed
