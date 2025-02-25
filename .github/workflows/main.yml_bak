@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           submodules: "recursive"
           fetch-depth: 0
@@ -41,31 +41,27 @@ jobs:
           fi
 
       - name: Checkout libxposed/api
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           repository: libxposed/api
           path: libxposed/api
 
       - name: Checkout libxposed/service
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           repository: libxposed/service
           path: libxposed/service
 
       - name: Setup Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v3
         with:
-          distribution: temurin
-          java-version: 21
+          distribution: "adopt"
+          java-version: "21"
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
-
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+        uses: gradle/gradle-build-action@v2
         with:
-          log-accepted-android-sdk-licenses: 'false'
-          packages: ''
+          gradle-home-cache-cleanup: true
 
       - name: Set up ccache
         uses: hendrikmuhs/ccache-action@v1.2
@@ -74,12 +70,6 @@ jobs:
           key: ${{ runner.os }}
           restore-keys: ${{ runner.os }}
           save: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
-
-      - name: Setup Ninja
-        uses: seanmiddleditch/gha-setup-ninja@master
-        with:
-          version: 1.12.1
-
 
       - name: Build dependencies
         working-directory: libxposed
